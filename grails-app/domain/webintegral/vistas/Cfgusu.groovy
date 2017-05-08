@@ -7,12 +7,12 @@ class Cfgusu {
     String sbNoAccTServ
 
     static mapping = {
-//        datasource 'sqlserver'
-//        table 'CfgUsu'
-//        version false
-//        id column: 'idcfgusu', type: 'long'
-//        sUsuario column: 'susuario'
-//        sbAccServSolic column: 'sbaccservsolic'
-//        sbNoAccTServ column: 'sbnoacctserv'
+        datasource 'sqlserver'
+        table 'CfgUsu'
+        version false
+        id column: 'idcfgusu', type: 'long'
+        sUsuario column: 'susuario'
+        sbAccServSolic column: 'sbaccservsolic'
+        sbNoAccTServ column: 'sbnoacctserv'
     }
 }
