@@ -1,5 +1,7 @@
 package webintegral
 
+import webintegral.vistas.Cfgusu
+
 class BootStrap {
 
     def springSecurityService
@@ -16,6 +18,12 @@ class BootStrap {
                 it.flush()
                 it.clear()
             }
+        }
+
+        if (Cfgusu.count) {
+            println("Hemos encontrado ${Cfgusu.count} registros en CfgUsu")
+        } else {
+            println("No hemos encontrado registros en CfgUsu")
         }
     }
     def destroy = {
