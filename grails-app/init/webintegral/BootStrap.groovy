@@ -5,10 +5,10 @@ class BootStrap {
     def springSecurityService
 
     def init = { servletContext ->
-        if (!User.count) {
-            def rol = new Role(authority: 'ADMIN').save()
+        if (!Users.count) {
+            def rol = new Roles(authority: 'ADMIN').save()
 
-            def user = new User(username: 'virtual', password: '1qazxc').save()
+            def user = new Users(username: 'virtual', password: '1qazxc').save()
 
             UserRole.create user, rol
 

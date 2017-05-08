@@ -1,9 +1,11 @@
-
+grails.config.locations = [
+		"~/webintegral-config.groovy"
+]
 
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'webintegral.User'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'webintegral.Users'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'webintegral.UserRole'
-grails.plugin.springsecurity.authority.className = 'webintegral.Role'
+grails.plugin.springsecurity.authority.className = 'webintegral.Roles'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
