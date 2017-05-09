@@ -1,4 +1,4 @@
-package webintegral.vistas
+package es.virtualsw.webintegral.vistas
 
 class Cfgusu {
 

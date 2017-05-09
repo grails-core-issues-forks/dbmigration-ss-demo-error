@@ -2,7 +2,7 @@
 grails:
     profile: web
     codegen:
-        defaultPackage: webintegral
+        defaultPackage: es.virtualsw.webintegral
     spring:
         transactionManagement:
             proxies: false

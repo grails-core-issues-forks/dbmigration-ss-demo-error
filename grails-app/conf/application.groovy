@@ -3,9 +3,9 @@ grails.config.locations = [
 ]
 
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'webintegral.Users'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'webintegral.UserRole'
-grails.plugin.springsecurity.authority.className = 'webintegral.Roles'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'es.virtualsw.webintegral.Users'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'es.virtualsw.webintegral.UsersRoles'
+grails.plugin.springsecurity.authority.className = 'es.virtualsw.webintegral.Roles'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],

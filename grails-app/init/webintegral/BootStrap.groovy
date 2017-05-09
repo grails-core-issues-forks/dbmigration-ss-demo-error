@@ -1,6 +1,9 @@
 package webintegral
 
-import webintegral.vistas.Cfgusu
+import es.virtualsw.webintegral.Roles
+import es.virtualsw.webintegral.Users
+import es.virtualsw.webintegral.UsersRoles
+import es.virtualsw.webintegral.vistas.Cfgusu
 
 class BootStrap {
 
@@ -12,9 +15,9 @@ class BootStrap {
 
             def user = new Users(username: 'virtual', password: '1qazxc').save()
 
-            UserRole.create user, rol
+            UsersRoles.create user, rol
 
-            UserRole.withSession {
+            UsersRoles.withSession {
                 it.flush()
                 it.clear()
             }
