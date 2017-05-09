@@ -3,8 +3,10 @@ package es.virtualsw.webintegral
 import grails.gorm.DetachedCriteria
 import groovy.transform.ToString
 
-import org.apache.commons.lang.builder.HashCodeBuilder
+import org.codehaus.groovy.util.HashCodeHelper
+import grails.compiler.GrailsCompileStatic
 
+@GrailsCompileStatic
 @ToString(cache=true, includeNames=true, includePackage=false)
 class UsersRoles implements Serializable {
 
@@ -20,12 +22,16 @@ class UsersRoles implements Serializable {
 		}
 	}
 
-	@Override
+    @Override
 	int hashCode() {
-		def builder = new HashCodeBuilder()
-		if (users) builder.append(users.id)
-		if (roles) builder.append(roles.id)
-		builder.toHashCode()
+	    int hashCode = HashCodeHelper.initHash()
+        if (users) {
+            hashCode = HashCodeHelper.updateHash(hashCode, users.id)
+		}
+		if (roles) {
+		    hashCode = HashCodeHelper.updateHash(hashCode, roles.id)
+		}
+		hashCode
 	}
 
 	static UsersRoles get(long usersId, long rolesId) {
@@ -43,9 +49,9 @@ class UsersRoles implements Serializable {
 		}
 	}
 
-	static UsersRoles create(Users users, Roles roles) {
+	static UsersRoles create(Users users, Roles roles, boolean flush = false) {
 		def instance = new UsersRoles(users: users, roles: roles)
-		instance.save()
+		instance.save(flush: flush)
 		instance
 	}
 
@@ -56,11 +62,11 @@ class UsersRoles implements Serializable {
 	}
 
 	static int removeAll(Users u) {
-		u == null ? 0 : UsersRoles.where { users == u }.deleteAll()
+		u == null ? 0 : UsersRoles.where { users == u }.deleteAll() as int
 	}
 
 	static int removeAll(Roles r) {
-		r == null ? 0 : UsersRoles.where { roles == r }.deleteAll()
+		r == null ? 0 : UsersRoles.where { roles == r }.deleteAll() as int
 	}
 
 	static constraints = {

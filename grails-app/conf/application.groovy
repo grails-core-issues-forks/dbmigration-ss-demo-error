@@ -2,6 +2,7 @@ grails.config.locations = [
 		"~/webintegral-config.groovy"
 ]
 
+
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'es.virtualsw.webintegral.Users'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'es.virtualsw.webintegral.UsersRoles'
