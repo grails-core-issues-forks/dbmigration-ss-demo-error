@@ -12,19 +12,19 @@ import org.springframework.context.ApplicationEvent
 import groovy.transform.CompileStatic
 
 @CompileStatic
-class UsersPasswordEncoderListener extends AbstractPersistenceEventListener {
+class UserPasswordEncoderListener extends AbstractPersistenceEventListener {
 
     @Autowired
     SpringSecurityService springSecurityService
 
-    UsersPasswordEncoderListener(final Datastore datastore) {
+    UserPasswordEncoderListener(final Datastore datastore) {
         super(datastore)
     }
 
     @Override
     protected void onPersistenceEvent(AbstractPersistenceEvent event) {
-        if (event.entityObject instanceof Users) {
-            Users u = (event.entityObject as Users)
+        if (event.entityObject instanceof User) {
+            User u = (event.entityObject as User)
             if (u.password && (event.eventType == EventType.PreInsert || (event.eventType == EventType.PreUpdate && u.isDirty('password')))) {
                 event.getEntityAccess().setProperty("password", encodePassword(u.password))
             }

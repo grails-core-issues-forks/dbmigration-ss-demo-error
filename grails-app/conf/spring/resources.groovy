@@ -1,5 +1,4 @@
-import es.virtualsw.webintegral.UsersPasswordEncoderListener
-// Place your Spring DSL code here
+import es.virtualsw.webintegral.UserPasswordEncoderListener
 beans = {
-    usersPasswordEncoderListener(UsersPasswordEncoderListener, ref('hibernateDatastore'))
+    userPasswordEncoderListener(UserPasswordEncoderListener, ref('hibernateDatastore'))
 }

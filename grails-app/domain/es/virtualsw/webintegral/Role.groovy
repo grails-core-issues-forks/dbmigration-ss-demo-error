@@ -7,7 +7,7 @@ import grails.compiler.GrailsCompileStatic
 @GrailsCompileStatic
 @EqualsAndHashCode(includes='authority')
 @ToString(includes='authority', includeNames=true, includePackage=false)
-class Roles implements Serializable {
+class Role implements Serializable {
 
 	private static final long serialVersionUID = 1
 
