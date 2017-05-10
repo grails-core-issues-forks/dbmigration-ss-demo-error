@@ -7,6 +7,7 @@ class Cfgusu {
     String sbNoAccTServ
 
     static mapping = {
+/*
         datasource 'sqlserver'
         table 'CfgUsu'
         version false
@@ -14,5 +15,6 @@ class Cfgusu {
         sUsuario column: 'susuario'
         sbAccServSolic column: 'sbaccservsolic'
         sbNoAccTServ column: 'sbnoacctserv'
+*/
     }
 }
